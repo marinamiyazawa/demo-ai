@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170724091741) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.text "name"
+    t.string "name"
     t.text "profile_image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
