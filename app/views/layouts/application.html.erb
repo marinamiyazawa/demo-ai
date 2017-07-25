@@ -35,17 +35,21 @@
           </div>
           <div id="slidemenu">
             <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
-              <li class="">
-                <a href="form.php">
-                  <span>投稿フォーム</span>
-                </a>
-              </li>
-              <li class="">
-                <a href="login.php">
-                  <span>ログイン</span>
-                </a>
-              </li>
-  
+              <% if user_signed_in? %>
+                <li class="">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+	      	    <li class="">
+                  <span><%= link_to '投稿フォーム' %>
+                </li>
+	      	  <% else %>
+	      	  	<li class="">
+                  <%= link_to "新規登録", new_user_registration_path %>
+                </li>
+                <li class="">
+                  <%= link_to "ログイン", new_user_session_path %>
+                </li>
+	      	  <% end %>
             </ul>
           </div>
         </div>
