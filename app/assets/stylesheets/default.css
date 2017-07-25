@@ -2263,7 +2263,7 @@ label {
   top: 25px;
 }
 .has-icon label.sr-only ~ .form-control-icon {
-  top: 0;
+  top: 11px;
 }
 .has-icon .form-control {
   padding-left: 30px;
