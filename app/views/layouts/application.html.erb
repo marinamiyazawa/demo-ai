@@ -18,7 +18,70 @@
 
   <body>
 
+  <div class="header" id="header">
+	  <nav class="navbar navbar-main navbar-shadow" role="navigation" id="slide-nav">
+	    <div class="container relative">
+	      <div class="navbar-header">
+	        <a class="navbar-logo" href="/">
+	          <!-- <img id="logoTwo" src="assets/images/logo.png" class="img-responsive"> -->
+	          <%= image_tag('logo.png') %>
+	        </a>
+
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+	          <span class="sr-only">Toggle navigation</span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+	      </div>
+	      <div id="slidemenu">
+	        <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+	          <li class="">
+	            <a href="form.php">
+	              <span>投稿フォーム</span>
+	            </a>
+	          </li>
+	          <li class="">
+	            <a href="login.php">
+	              <span>ログイン</span>
+	            </a>
+	          </li>
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</div>
+
     <%= yield %>
 
+  <footer class="footer style-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="col">
+            <%= image_tag('logo-white.png') %>
+            <p class="no-margin">
+				footerテキストfooterテキストfooterテキストfooterテキストfooterテキストfooterテキスト
+			</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="col">
+            <h4>Link</h4>
+            <ul>
+              <li>
+                <a href="" title="About">会社概要</a>
+              </li>
+              <li>
+                <a href="" title="License informations">プライバシーポリシー</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
   </body>
 </html>
