@@ -1,0 +1,55 @@
+<section class="slice sct-color-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="section-title-wrapper style-1 v1">
+              <h3 class="section-title section-title-sm left">
+                <span>画像投稿フォーム</span>
+              </h3>
+            </div>
+
+            <!-- <form class="mt-20"> -->
+            <%= form_for(@postimage, url: postimages_path) do |f| %>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group has-icon">
+                    <label class="control-label sr-only">ショップ名</label>
+                    <%= f.text_field :shop_name, class:"form-control", placeholder:"ショップ名" %>
+                    <span class="fa fa-building form-control-icon" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <!-- <div class="form-group has-icon">
+                  <label class="control-label sr-only">カテゴリー</label>
+                  <input type="text" class="form-control" id="category" placeholder="カテゴリー">
+                    <span class="fa fa-bars form-control-icon"></span>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <%= f.file_field :image_url %>
+                </div>
+              </div>
+
+              <%= f.submit "送信", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+            <!-- </form> -->
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
