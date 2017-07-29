@@ -40,7 +40,7 @@
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </li>
 	      	    <li class="">
-                  <span><%= link_to '投稿フォーム' %>
+                  <%= link_to '投稿フォーム', new_postimage_path %>
                 </li>
 	      	  <% else %>
 	      	  	<li class="">
