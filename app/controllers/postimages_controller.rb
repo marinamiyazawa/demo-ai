@@ -19,7 +19,7 @@ class PostimagesController < ApplicationController
 
 	def postimage_params
 		params.require(:post_image).permit(:shop_name,
-										  :image_url,
+										  :image,
 										  :caption,
 										  :user_id)
 	end
