@@ -5,25 +5,28 @@
         <div class="masonry-wrapper-cols">
           <div class="masonry-gutter"></div>
          
+         <% @postimages.each do |postimage| %>
+
             <div class="masonry-block">
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
                     <a href="single.php">
-                      <%= image_tag('sample-post1.jpg') %>
+                      <%#= image_tag('sample-post1.jpg') %>
+                      <%= attachment_image_tag postimage, :image %>
                     </a>
                   </div>
                 </div>
                 <div class="block-content">
                   <%= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>
                   <h3 class="block-title">
-                    <a href="#"><i class="fa fa-map-marker"></i> ショップ名</a>
+                    <a href="#"><i class="fa fa-map-marker"></i><%= postimage.shop_name %></a>
                     <!-- <label for="" class="pull-left label-primary label"></label> -->
                   </h3>
-                  <p>この画像に関する説明</p>
+                  <p><%= postimage.caption %></p>
                   <ul class="inline-meta">
                     <li>By 
-                      <a href="#">投稿者名</a>
+                      <a href="#"><%= postimage.user.name %></a>
                     </li>
                     <li>
                       <a href="#">23 コメント</a>
@@ -31,11 +34,13 @@
                     <li>
                       <a href="#"></a>
                     </li>                                  
-                  </ul>
+                  </ul> 
                 </div>
               </div>
             </div>
-         
+
+          <% end %>
+        
         </div>
       </div>
     </div>

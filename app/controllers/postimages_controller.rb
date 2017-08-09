@@ -10,6 +10,7 @@ class PostimagesController < ApplicationController
 
 	def create
 		@postimage = PostImage.new(postimage_params)
+		@postimage.user_id = current_user.id
 		@postimage.save
 		redirect_to postimages_path
 	end
@@ -19,7 +20,7 @@ class PostimagesController < ApplicationController
 
 	def postimage_params
 		params.require(:post_image).permit(:shop_name,
-										  :image_url,
+										  :image,
 										  :caption,
 										  :user_id)
 	end
