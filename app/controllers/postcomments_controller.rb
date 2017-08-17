@@ -1,2 +1,0 @@
-class PostcommentsController < ApplicationController
-end

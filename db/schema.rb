@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170817053323) do
   create_table "post_comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
-    t.integer "postimage_id"
+    t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

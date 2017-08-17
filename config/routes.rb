@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :postimages, only: [:new, :create, :index, :show] do
+  resources :post_images, only: [:new, :create, :index, :show] do
   	resource :favorites, only: [:create, :destroy]
   end
 
-  root 'postimages#index'
+  root 'post_images#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
