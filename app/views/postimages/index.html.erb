@@ -31,9 +31,19 @@
                     <li>
                       <a href="#">23 コメント</a>
                     </li>
-                    <li>
-                      <a href="#"></a>
-                    </li>                                  
+                    <% if postimage.favorited_by?(current_user) %>
+                      <li>
+                        <a href="#">
+                          <%= link_to "いいね解除", postimage_favorites_path(postimage), method: :delete %>
+                        </a>
+                      </li>
+                    <% else %>
+                      <li>
+                        <a href="#">
+                          <%= link_to "いいね", postimage_favorites_path(postimage), method: :post %>
+                        </a>
+                      </li> 
+                    <% end %> 
                   </ul> 
                 </div>
               </div>
