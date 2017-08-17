@@ -15,6 +15,10 @@ class PostimagesController < ApplicationController
 		redirect_to postimages_path
 	end
 
+	def show
+		@postimage = PostImage.find(params[:id])
+	end
+
 
 	private
 

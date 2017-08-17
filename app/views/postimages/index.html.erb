@@ -11,10 +11,12 @@
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
-                    <a href="single.php">
+                    <!-- <a href="single.php"> -->
+                    <%= link_to postimage_path(postimage.id) do %>
                       <%#= image_tag('sample-post1.jpg') %>
                       <%= attachment_image_tag postimage, :image %>
-                    </a>
+                    <% end %>
+                    <!-- </a> -->
                   </div>
                 </div>
                 <div class="block-content">
