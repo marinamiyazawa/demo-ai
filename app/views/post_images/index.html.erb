@@ -5,16 +5,16 @@
         <div class="masonry-wrapper-cols">
           <div class="masonry-gutter"></div>
          
-         <% @postimages.each do |postimage| %>
+         <% @post_images.each do |post_image| %>
 
             <div class="masonry-block">
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
                     <!-- <a href="single.php"> -->
-                    <%= link_to post_image_path(postimage.id) do %>
+                    <%= link_to post_image_path(post_image.id) do %>
                       <%#= image_tag('sample-post1.jpg') %>
-                      <%= attachment_image_tag postimage, :image %>
+                      <%= attachment_image_tag post_image, :image %>
                     <% end %>
                     <!-- </a> -->
                   </div>
@@ -22,27 +22,27 @@
                 <div class="block-content">
                   <%= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>
                   <h3 class="block-title">
-                    <a href="#"><i class="fa fa-map-marker"></i><%= postimage.shop_name %></a>
+                    <a href="#"><i class="fa fa-map-marker"></i><%= post_image.shop_name %></a>
                     <!-- <label for="" class="pull-left label-primary label"></label> -->
                   </h3>
-                  <p><%= postimage.caption %></p>
+                  <p><%= post_image.caption %></p>
                   <ul class="inline-meta">
                     <li>By 
-                      <a href="#"><%= postimage.user.name %></a>
+                      <a href="#"><%= post_image.user.name %></a>
                     </li>
                     <li>
                       <a href="#">23 コメント</a>
                     </li>
-                    <% if postimage.favorited_by?(current_user) %>
+                    <% if post_image.favorited_by?(current_user) %>
                       <li>
                         <a href="#">
-                          <%= link_to "いいね解除", post_image_favorites_path(postimage), method: :delete %>
+                          <%= link_to "いいね解除", post_image_favorites_path(post_image), method: :delete %>
                         </a>
                       </li>
                     <% else %>
                       <li>
                         <a href="#">
-                          <%= link_to "いいね", post_image_favorites_path(postimage), method: :post %>
+                          <%= link_to "いいね", post_image_favorites_path(post_image), method: :post %>
                         </a>
                       </li> 
                     <% end %> 

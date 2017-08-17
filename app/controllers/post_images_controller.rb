@@ -1,22 +1,23 @@
 class PostImagesController < ApplicationController
 
 	def index
-		@postimages = PostImage.all
+		@post_images = PostImage.all
 	end
 
 	def new
-		@postimage = PostImage.new
+		@post_image = PostImage.new
 	end
 
 	def create
-		@postimage = PostImage.new(postimage_params)
-		@postimage.user_id = current_user.id
-		@postimage.save
+		@post_image = PostImage.new(postimage_params)
+		@post_image.user_id = current_user.id
+		@post_image.save
 		redirect_to post_images_path
 	end
 
 	def show
-		@postimage = PostImage.find(params[:id])
+		@post_image = PostImage.find(params[:id])
+		@post_comment = PostComment.new
 	end
 
 

@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
         favorite = current_user.favorites.new(post_image_id: post_image.id)
         # favorite = Favorite.new
         # favorite.user_id = current_user.id
-        # favorite.post_image_id = postimage.id
+        # favorite.post_image_id = post_image.id
         favorite.save
         redirect_to post_images_path
 	end
