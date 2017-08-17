@@ -11,10 +11,12 @@
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
-                    <a href="single.php">
+                    <!-- <a href="single.php"> -->
+                    <%= link_to post_image_path(postimage.id) do %>
                       <%#= image_tag('sample-post1.jpg') %>
                       <%= attachment_image_tag postimage, :image %>
-                    </a>
+                    <% end %>
+                    <!-- </a> -->
                   </div>
                 </div>
                 <div class="block-content">
@@ -34,13 +36,13 @@
                     <% if postimage.favorited_by?(current_user) %>
                       <li>
                         <a href="#">
-                          <%= link_to "いいね解除", postimage_favorites_path(postimage), method: :delete %>
+                          <%= link_to "いいね解除", post_image_favorites_path(postimage), method: :delete %>
                         </a>
                       </li>
                     <% else %>
                       <li>
                         <a href="#">
-                          <%= link_to "いいね", postimage_favorites_path(postimage), method: :post %>
+                          <%= link_to "いいね", post_image_favorites_path(postimage), method: :post %>
                         </a>
                       </li> 
                     <% end %> 
