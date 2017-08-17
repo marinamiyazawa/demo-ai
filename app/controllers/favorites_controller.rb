@@ -1,7 +1,10 @@
 class FavoritesController < ApplicationController
 	def create
-		postimage = Post.find(params[:postimage_id])
-        favorite = current_user.favorites.build(postimage: postimage)
+		postimage = PostImage.find(params[:postimage_id])
+        favorite = current_user.favorites.new(post_image_id: postimage.id)
+        # favorite = Favorite.new
+        # favorite.user_id = current_user.id
+        # favorite.post_image_id = postimage.id
         favorite.save
         redirect_to postimages_path
 	end
