@@ -48,7 +48,8 @@
                     <div class="comment-avatar">
                       <div class="avatar">
                         <!-- <img src="images/sample-author1.jpg"> -->
-                        <%= image_tag('sample-author1.jpg') %>
+                        <%#= image_tag('sample-author1.jpg') %>
+                        <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60 %>
                       </div>
                     </div>
                     <div class="comment-text">
