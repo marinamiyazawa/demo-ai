@@ -23,11 +23,11 @@
               </li>
               <li>
                 <i class="fa fa-heart"></i>
-                <a href="#">202 いいね</a>
+                <a href="#"><%= @post_image.favorites.count %> いいね</a>
               </li>
               <li>
                 <i class="fa fa-comment"></i>
-                <a href="#comments">4</a>
+                <a href="#comments"><%= @post_image.post_comments.count %></a>
               </li>
             </ul>
             <div class="post-content-inner mt-20">
@@ -38,7 +38,7 @@
 
           <div class="comment-list bt style-2" id="comments">
             <div class="float-wrapper">
-              <h2 class="comment-count">4件コメント</h2>
+              <h2 class="comment-count"><%= @post_image.post_comments.count %>件コメント</h2>
               <!-- <a href="#divAddComment" class="link-add-comment anchor">Join Discussion</a> -->
             </div>
             <ol>
