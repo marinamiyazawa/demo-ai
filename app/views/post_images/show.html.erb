@@ -6,7 +6,6 @@
           <div class="post-meta-top">
             <div class="post-image">
               <a href="images/sample-post1.jpg" class="theater">
-                <!-- <img src="images/sample-post1.jpg"> -->
                 <%= attachment_image_tag @post_image, :image %>
               </a>
             </div>
@@ -15,8 +14,8 @@
             <h2 class="post-title"><%= @post_image.shop_name %></h2>
             <ul class="meta-info-cells v4 float-wrapper">
               <li>
-                <i class="fa fa-user"></i>By
-                <a href="#"><%= @post_image.user.name %></a>
+                <i class="fa fa-user"></i>
+                By<a href="#"><%= @post_image.user.name %></a>
               </li>
               <li>
                 <i class="fa fa-calendar"></i><%= @post_image.created_at.strftime('%Y/%m/%d') %>
@@ -34,12 +33,9 @@
               <p><%= @post_image.caption %></p>
             </div>
           </div>
-
-
           <div class="comment-list bt style-2" id="comments">
             <div class="float-wrapper">
               <h2 class="comment-count"><%= @post_image.post_comments.count %>件コメント</h2>
-              <!-- <a href="#divAddComment" class="link-add-comment anchor">Join Discussion</a> -->
             </div>
             <ol>
               <% @post_image.post_comments.each do |post_comment| %>
@@ -47,8 +43,6 @@
                   <div class="comment-body bb">
                     <div class="comment-avatar">
                       <div class="avatar">
-                        <!-- <img src="images/sample-author1.jpg"> -->
-                        <%#= image_tag('sample-author1.jpg') %>
                         <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60 %>
                       </div>
                     </div>
@@ -67,23 +61,18 @@
             </ol>
           </div>
           <hr>
-          <!-- Add comment section -->
           <div class="section-title-wrapper style-1 v1 mt-30" id="divAddComment">
             <h3 class="section-title left">
               <span>コメント</span>
             </h3>
           </div>
-          <!-- <form class="mt-20"> -->
           <%= form_for [@post_image, @post_comment] do |f| %>
             <div class="row">
               <div class="col-sm-12">
-                <!-- <textarea class="form-control" rows="5" placeholder="コメントをここに"></textarea> -->
                 <%= f.text_field :comment, class: "form-control",placeholder: "コメントをここに" %>
               </div>
             </div>
-            <!-- <button type="submit" class="btn btn-lg btn-base-1 mt-20 pull-right">送信する</button> -->
             <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
-          <!-- </form> -->
           <% end %>
         </div>
       </div>

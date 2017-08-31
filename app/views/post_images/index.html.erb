@@ -4,31 +4,25 @@
       <div class="col-md-8 col-sm-offset-2">
         <div class="masonry-wrapper-cols">
           <div class="masonry-gutter"></div>
-         
-         <% @post_images.each do |post_image| %>
 
+         <% @post_images.each do |post_image| %>
             <div class="masonry-block">
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
-                    <!-- <a href="single.php"> -->
                     <%= link_to post_image_path(post_image.id) do %>
-                      <%#= image_tag('sample-post1.jpg') %>
                       <%= attachment_image_tag post_image, :image %>
                     <% end %>
-                    <!-- </a> -->
                   </div>
                 </div>
                 <div class="block-content">
-                  <%#= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>
                   <%= attachment_image_tag post_image.user, :profile_image, class: "img-circle pull-left profile-thumb" %>
                   <h3 class="block-title">
                     <a href="#"><i class="fa fa-map-marker"></i><%= post_image.shop_name %></a>
-                    <!-- <label for="" class="pull-left label-primary label"></label> -->
                   </h3>
                   <p><%= post_image.caption %></p>
                   <ul class="inline-meta">
-                    <li>By 
+                    <li>By
                       <a href="#"><%= post_image.user.name %></a>
                     </li>
                     <li>
@@ -38,26 +32,27 @@
                       <li>
                         <a href="#">
                           <%= link_to post_image_favorites_path(post_image), method: :delete do %>
-                          <i class="fa fa-heart" aria-hidden="true"></i>
-                          <% end %> 
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                          <% end %>
                         </a>
                       </li>
                     <% else %>
                       <li>
                         <a href="#">
                           <%= link_to post_image_favorites_path(post_image), method: :post do %>
-                          <i class="fa fa-heart-o" aria-hidden="true"></i>
-                          <% end %> 
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                          <% end %>
                         </a>
-                      </li> 
-                    <% end %> 
-                  </ul> 
+                      </li>
+                    <% end %>
+                  </ul>
                 </div>
               </div>
             </div>
-
           <% end %>
+
           <%= paginate @post_images, class: "pagenate" %>
+
         </div>
       </div>
     </div>

@@ -11,7 +11,6 @@
               </h3>
             </div>
 
-            <!-- <form class="mt-20"> -->
             <%= form_for(@post_image, url: post_images_path) do |f| %>
               <% if @post_image.errors.any? %>
                 <div id="error_explanation">
@@ -32,30 +31,20 @@
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <!-- <div class="form-group has-icon">
-                  <label class="control-label sr-only">カテゴリー</label>
-                  <input type="text" class="form-control" id="category" placeholder="カテゴリー">
-                    <span class="fa fa-bars form-control-icon"></span>
-                  </div> -->
                 </div>
               </div>
-
               <div class="row">
                 <div class="col-sm-12">
                   <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
                 </div>
               </div>
-
               <hr>
-
               <div class="row">
                 <div class="col-sm-12">
                   <%= f.attachment_field :image %>
                 </div>
               </div>
-
               <%= f.submit "送信", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
-            <!-- </form> -->
             <% end %>
           </div>
         </div>
