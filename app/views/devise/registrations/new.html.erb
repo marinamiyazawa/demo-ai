@@ -14,7 +14,6 @@
                                 <h2 class="form-header-title">ユーザー登録</h2>
                             </div>
                             <div class="form-body">
-                            <!-- <form class="mt-20"> -->
                               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                                   <%= devise_error_messages! %>
 
@@ -42,13 +41,9 @@
                                     <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"inputEmail", placeholder:"パスワード確認" %>
                                     <span class="fa fa-check-circle-o form-control-icon" aria-hidden="true"></span>
                                 </div>
-                                <!-- <div class="checkbox">
-                                    <input type="checkbox" id="chkRememberMe">
-                                    <label for="chkRememberMe">ログイン情報を記憶する</label>
-                                </div> -->                        
+                                                    
                                 <%= f.submit "サインアップ", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
                               <% end %>
-                            <!-- </form> -->
                             </div>
                           </div>
                      
