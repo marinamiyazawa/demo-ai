@@ -1,7 +1,7 @@
 class PostImagesController < ApplicationController
 
 	def index
-		@post_images = PostImage.page(params[:page])
+		@post_images = PostImage.page(params[:page]).reverse_order
 	end
 
 	def new
@@ -32,5 +32,5 @@ class PostImagesController < ApplicationController
 										  :caption,
 										  :user_id)
 	end
-	
+
 end
