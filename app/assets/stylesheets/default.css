@@ -1,11 +1,11 @@
-/*  
-Theme Name: Visio - Responsive Website Template     
-Theme URI: http://preview.devisio.ro/visio-v1.2/ 
+/*
+Theme Name: Visio - Responsive Website Template
+Theme URI: http://preview.devisio.ro/visio-v1.2/
 Description: Visio - Responsive Website Template is a responsive website template based on the well known Bootstrap framework. Easy to work with, easy to customize and infinite solutions that can be implemented in your project are just a few attributes that recommend Visio to be one of the most complete template.
 Author: Devisio
 Author URI: http://www.devisio.ro
-Version: 1.2                          
-License URI: http://wrapbootstrap.com                  
+Version: 1.2
+License URI: http://wrapbootstrap.com
 */
 /* This is the place where you can override the default variables values. Check out the "Working with LESS variables" from the documentation to learn more*/
 /* This is the place where you can override the default variables values. Check out the "Working with LESS variables" from the documentation to learn more*/
@@ -5483,6 +5483,7 @@ figure.effect-chico:hover p {
 .block.style-1.grid .block-image {
   position: relative;
   margin-bottom: 5px;
+
 }
 .block.style-1.grid .image-title {
   position: absolute;
@@ -5971,7 +5972,7 @@ figure.effect-chico:hover p {
   margin-right: 8px;
 }
 .block.style-8 .block-image img {
-  width: 100%;
+  width: 70%;
 }
 .block.style-8 .info-author .author-img {
   width: 75px;
@@ -6056,9 +6057,14 @@ figure.effect-chico:hover p {
 .block.block-media .block-media-content {
   margin-bottom: 20px;
 }
+
+/*画像のサイズ変更*/
 .block.block-image .block-image img {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
+
+
 .block.block-image .block-title,
 .block-media .block-title {
   margin-bottom: 8px;
