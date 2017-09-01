@@ -48,6 +48,9 @@
               <p><%= @post_image.caption %></p>
             </div>
           </div>
+          <% if @post_image.user == current_user %>
+            <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+          <% end %>
           <div class="comment-list bt style-2" id="comments">
             <div class="float-wrapper">
               <h2 class="comment-count"><%= @post_image.post_comments.count %>件コメント</h2>

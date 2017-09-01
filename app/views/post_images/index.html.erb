@@ -45,6 +45,9 @@
                         </a>
                       </li>
                     <% end %>
+                    <% if post_image.user == current_user %>
+                      <li><%= link_to "削除", post_image_path(post_image), method: :delete %></li>
+                    <% end %>
                   </ul>
                 </div>
               </div>
