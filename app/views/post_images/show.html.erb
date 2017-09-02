@@ -34,7 +34,7 @@
                   <a href="#">
                     <%= link_to post_image_favorites_path(@post_image), method: :post do %>
                       <i class="fa fa-heart-o" aria-hidden="true"></i>
-                      <a href="#"><%= @post_image.favorites.count %> いいね</a>
+                      <%= @post_image.favorites.count %> いいね
                     <% end %>
                   </a>
                 </li>
@@ -42,6 +42,11 @@
               <li>
                 <i class="fa fa-comment"></i>
                 <a href="#comments"><%= @post_image.post_comments.count %></a>
+              </li>
+              <li>
+                <% if @post_image.user == current_user %>
+                  <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+                <% end %>
               </li>
             </ul>
             <div class="post-content-inner mt-20">

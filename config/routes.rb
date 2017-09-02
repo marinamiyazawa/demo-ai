@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # get 'users/edit' => 'users#edit'
 
-  resources :post_images, only: [:new, :create, :index, :show] do
+  devise_for :users
+  resources :users
+  resources :post_images, only: [:new, :create, :index, :show, :destroy] do
   	resource :favorites, only: [:create, :destroy]
   	resource :post_comments, only: [:create, :destroy]
   end
