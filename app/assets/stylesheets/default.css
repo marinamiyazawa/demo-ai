@@ -11515,6 +11515,7 @@ body {
   padding: 0 20px;
 }
 .profile-thumb{
+  width: 80px;
   height: 80px;
   margin-right: 20px;
 }
