@@ -1744,6 +1744,8 @@ fieldset[disabled] .navbar-main .btn-link:focus {
 section.slice {
   padding: 46px 0;
   position: relative;
+  /*背景色追加*/
+  background-color: #EAEBED;
 }
 section.slice-lg {
   padding: 86px 0;
@@ -11507,6 +11509,7 @@ body {
 .masonry-block{
   margin-bottom: 50px;
   border: 1px solid #EFEFEF;
+  background-color: #FFFFFF;
 }
 .masonry-block .block-content{
   padding: 0 20px;
