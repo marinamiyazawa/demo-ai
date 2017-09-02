@@ -38,5 +38,5 @@ class PostImagesController < ApplicationController
 										  :caption,
 										  :user_id)
 	end
-	
+
 end
