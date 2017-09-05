@@ -4,10 +4,8 @@
       <div class="col-md-12">
         <div class="post-item">
           <div class="post-meta-top">
-            <div class="post-image">
-              <a href="images/sample-post1.jpg" class="theater">
-                <%= attachment_image_tag @post_image, :image %>
-              </a>
+            <div class="post-image">            
+              <%= attachment_image_tag @post_image, :image %>
             </div>
           </div>
           <div class="post-content">
@@ -63,7 +61,7 @@
                   <div class="comment-body bb">
                     <div class="comment-avatar">
                       <div class="avatar">
-                        <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60 %>
+                        <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
                       </div>
                     </div>
                     <div class="comment-text">
