@@ -1,6 +1,7 @@
 <div class="profile-container">
 	<h3 class="profile-name"><%= @user.name %></h3>
-	<%= image_tag attachment_url(@user, :profile_image, :fill, 100, 100, format: "jpg"), class: "img-circle pull-left profile-img" %>
+	<%#= image_tag attachment_url(@user, :profile_image, :fill, 100, 100, format: "jpg"), class: "img-circle pull-left profile-img" %>
+	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %>
 </div>
 
 <section class="sct-color-1 slice">

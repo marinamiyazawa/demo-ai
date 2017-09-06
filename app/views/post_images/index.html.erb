@@ -4,7 +4,7 @@
       <div class="col-md-8 col-sm-offset-2">
         <div class="masonry-wrapper-cols">
           <div class="masonry-gutter"></div>
-         
+
          <% @post_images.each do |post_image| %>
 
             <div class="masonry-block">
@@ -42,7 +42,7 @@
                         <a href="#">
                           <%= link_to post_image_favorites_path(post_image), method: :post do %>
                           <i class="fa fa-heart-o" aria-hidden="true"></i>
-                          <% end %> 
+                          <% end %>
                         </a>
                       </li>
                     <% end %>
