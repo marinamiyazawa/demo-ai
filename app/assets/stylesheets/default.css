@@ -12055,6 +12055,9 @@ img.profile-img{
   content: "\f125";
   right: 0;
 }
+.post_image_form{
+  background-color: #fff;
+}
 @media (max-width: 771px) {
   .post-prev-next .post-next {
     margin-top: 20px;
