@@ -1,3 +1,9 @@
+<div class="profile-container">
+	<h3 class="profile-name"><%= @user.name %></h3>
+	<%#= image_tag attachment_url(@user, :profile_image, :fill, 100, 100, format: "jpg"), class: "img-circle pull-left profile-img" %>
+	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %>
+</div>
+
 <section class="sct-color-1 slice">
   <div class="container-fluid masonry-container">
     <div class="row">
@@ -23,7 +29,7 @@
                   </h3>
                   <p><%= post_image.caption %></p>
                   <ul class="inline-meta">
-                    <li>By 
+                    <li>By
                       <a href="#"><%= post_image.user.name %></a>
                     </li>
                     <li>
@@ -34,7 +40,7 @@
                         <a href="#">
                           <%= link_to post_image_favorites_path(post_image), method: :delete do %>
                           <i class="fa fa-heart" aria-hidden="true"></i>
-                          <% end %> 
+                          <% end %>
                         </a>
                       </li>
                     <% else %>

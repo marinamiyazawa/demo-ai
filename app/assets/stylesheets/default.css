@@ -6063,7 +6063,7 @@ figure.effect-chico:hover p {
 /*画像のサイズ変更*/
 .block.block-image .block-image img {
   width: 70%;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 
@@ -11520,6 +11520,29 @@ body {
   margin-right: 20px;
 }
 
+/*profile-imageの追加*/
+h3.profile-name{
+  display: inline-block;
+  font-size: 35px;
+  line-height: 100px;
+  margin-left: 100px;
+}
+
+.profile-container{
+  width: 50%;
+  height: 150px;
+  margin: 0 auto;
+}
+
+img.profile-img{
+  float: right;
+  margin-top: 30px;
+}
+
+
+
+
+
 
 /* ISOTOPE - MASONRY 2 COLS */
 .masonry-2-cols .masonry-gutter {
@@ -11979,7 +12002,11 @@ body {
 }
 .post-image img {
   display: block;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+.post_images_container{
+  background-color: #fff;
 }
 .post-item .post-content-inner p {
   margin-bottom: 20px;
@@ -12027,6 +12054,9 @@ body {
 .post-prev-next .post-next:before {
   content: "\f125";
   right: 0;
+}
+.post_image_form{
+  background-color: #fff;
 }
 @media (max-width: 771px) {
   .post-prev-next .post-next {
