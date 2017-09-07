@@ -2350,6 +2350,13 @@ label {
   padding: 15px 0;
   background-color: #ffffff;
 }
+.user-edit-image{
+  width: 80px;
+  margin: 0 auto;
+}
+.user-edit-form{
+  padding-top: 15px;
+}
 /* FORM OPAQUE - DEFAULT */
 .form-opaque-wrapper.style-1 {
   background-color: rgba(255, 255, 255, 0.5);
@@ -12007,6 +12014,7 @@ img.profile-img{
 }
 .post_images_container{
   background-color: #fff;
+  padding: 20px;
 }
 .post-item .post-content-inner p {
   margin-bottom: 20px;
