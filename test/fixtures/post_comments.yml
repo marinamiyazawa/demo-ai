@@ -3,9 +3,9 @@
 one:
   comment: MyText
   user_id: 1
-  postimage_id: 1
+  post_image_id: 1
 
 two:
   comment: MyText
   user_id: 1
-  postimage_id: 1
+  post_image_id: 1

@@ -2,12 +2,12 @@
 
 one:
   shop_name: MyText
-  image_url: MyText
+  image_id: MyText
   caption: MyText
   user_id: 1
 
 two:
   shop_name: MyText
-  image_url: MyText
+  image_id: MyText
   caption: MyText
   user_id: 1

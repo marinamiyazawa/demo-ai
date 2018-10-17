@@ -1,18 +1,17 @@
 <div class="profile-container">
-	<h3 class="profile-name"><%= @user.name %></h3>
-	<%#= image_tag attachment_url(@user, :profile_image, :fill, 100, 100, format: "jpg"), class: "img-circle pull-left profile-img" %>
-	<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %>
+    <h3 class="profile-name"><%= @user.name %></h3>
+    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+    <% if @user.id == current_user.id %>
+      <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
+    <% end %>
 </div>
-
 <section class="sct-color-1 slice">
   <div class="container-fluid masonry-container">
     <div class="row">
       <div class="col-md-8 col-sm-offset-2">
         <div class="masonry-wrapper-cols">
           <div class="masonry-gutter"></div>
-
-         <% @post_images.each do |post_image| %>
-
+          <% @post_images.each do |post_image| %>
             <div class="masonry-block">
               <div class="block block-image v1">
                 <div class="block-image">
@@ -23,43 +22,24 @@
                   </div>
                 </div>
                 <div class="block-content">
-                  <%= attachment_image_tag post_image.user, :profile_image, class: "img-circle pull-left profile-thumb" %>
+                  <%= attachment_image_tag post_image.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %>
                   <h3 class="block-title">
-                    <a href="#"><i class="fa fa-map-marker"></i><%= post_image.shop_name %></a>
+                    <%= link_to post_image_path(post_image.id) do %>
+                      <i class="fa fa-map-marker"></i><%= post_image.shop_name %>
+                    <% end %>
                   </h3>
                   <p><%= post_image.caption %></p>
                   <ul class="inline-meta">
                     <li>By
-                      <a href="#"><%= post_image.user.name %></a>
+                      <%= post_image.user.name %>
                     </li>
                     <li>
-                      <a href="#"><%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %></a>
+                    <a href="#">23 コメント</a>
                     </li>
-                    <% if post_image.favorited_by?(current_user) %>
-                      <li>
-                        <a href="#">
-                          <%= link_to post_image_favorites_path(post_image), method: :delete do %>
-                          <i class="fa fa-heart" aria-hidden="true"></i>
-                          <% end %>
-                        </a>
-                      </li>
-                    <% else %>
-                      <li>
-                        <a href="#">
-                          <%= link_to post_image_favorites_path(post_image), method: :post do %>
-                          <i class="fa fa-heart-o" aria-hidden="true"></i>
-                          <% end %>
-                        </a>
-                      </li>
-                    <% end %>
-                    <% if post_image.user == current_user %>
-                      <li><%= link_to "削除", post_image_path(post_image), method: :delete %></li>
-                    <% end %>
                   </ul>
                 </div>
               </div>
             </div>
-
           <% end %>
           <%= paginate @post_images, class: "pagenate" %>
         </div>
