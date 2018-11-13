@@ -71,6 +71,6 @@ gem 'therubyracer', platforms: :ruby
 
 group :production do
   # Gemfileの1番下に追加しましょう。
-  gem 'pg'
+  #gem 'pg'
 end
 
