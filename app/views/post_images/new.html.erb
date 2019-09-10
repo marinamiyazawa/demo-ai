@@ -2,7 +2,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-
         <div class="row">
           <div class="col-md-6 col-md-offset-3 post_image_form">
             <div class="section-title-wrapper style-1 v1">
@@ -10,7 +9,6 @@
                 <span>画像投稿フォーム</span>
               </h3>
             </div>
-
             <%= form_for(@post_image, url: post_images_path) do |f| %>
               <% if @post_image.errors.any? %>
                 <div id="error_explanation">

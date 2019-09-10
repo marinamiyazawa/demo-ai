@@ -73,4 +73,3 @@ group :production do
   # Gemfileの1番下に追加しましょう。
   #gem 'pg'
 end
-
