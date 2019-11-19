@@ -13,6 +13,11 @@
                       <%= attachment_image_tag post_image, :image %>
                     <% end %>
                   </div>
+                  <div class="block-content">
+                    <% post_image.tags.each do |tag| %>
+                      <span class="label label-primary"><%= tag.name %></span>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="block-content">
                   <%= attachment_image_tag post_image.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %>

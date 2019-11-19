@@ -10,6 +10,11 @@
           </div>
           <div class="post-content">
             <h2 class="post-title"><%= @post_image.shop_name %></h2>
+            <h4>
+              <% @post_image.tags.each do |tag| %>
+                <span class="label label-primary"><%= tag.name %></span>
+              <% end %>
+            </h4>
             <ul class="meta-info-cells v4 float-wrapper">
               <li>
                 <i class="fa fa-user"></i>
